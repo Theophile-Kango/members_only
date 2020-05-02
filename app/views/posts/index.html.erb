@@ -9,7 +9,7 @@
           <li class= "list-group-item"><%= link_to post.title, post, class: 'post_title' %><li>
           <% if current_user %>
             <p>Created by: <%= post.user.name %></p>
-            <%=button_to "Delete Post", post, method: :delete, data: {confirm: "Are you sure you want to delete the post?"}, class: 'btn btn-danger mb-3' %>
+            <%=button_to "Delete Post", post, method: :delete, data: {confirm: "Are you sure you want to delete the post?"}, class: 'btn btn-danger mb-3' %> 
           <% end %>
         <% end %>
       </ul>
