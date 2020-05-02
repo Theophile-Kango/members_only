@@ -1,0 +1,11 @@
+<div class= "container">
+<h1 class="font-weight-bold">Create a Post</h1>
+
+<%= form_for @post do |f| %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %><br>
+    <%= f.label :body %><br>
+    <%= f.text_area :body, class: "form-control"%><br>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
+</div>

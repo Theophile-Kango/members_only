@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create]
     before_action :find_post, only: [:show, :edit, :update, :destroy]
+  
 
     def index
         @posts = Post.all
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
     end
 
     def update
-    if @post.update
+    if @post.update(post_params)
         redirect_to @post
     else
         render :edit
