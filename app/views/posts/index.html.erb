@@ -1,19 +1,19 @@
 <div class = "container jumbotron text-center ">
-<div class="card">
-  <div class="card-header">
-    <p class= "font-weight-bold text-muted">All Posts</p>
+  <div class="card">
+    <div class="card-header">
+      <p class= "font-weight-bold text-muted">All Posts</p>
+    </div>
+    <div class="card-body">
+      <ul class= "list-group list-unstyled">
+        <% @posts.each do |post| %>
+          <li class= "list-group-item"><%= link_to post.title, post, class: 'post_title' %><li>
+          <% if current_user %>
+            <p>Created by: <%= post.user.name %></p>
+            <%=button_to "Delete Post", post, method: :delete, data: {confirm: "Are you sure you want to delete the post?"}, class: 'btn btn-danger mb-3' %>
+          <% end %>
+        <% end %>
+      </ul>
+      <%= link_to "Create a New article", new_post_path, class: 'btn btn-primary mt-2' %>
+    </div>
   </div>
-  <div class="card-body">
-<ul class= "list-group list-unstyled">
-<% @posts.each do |post| %>
-<li class= "list-group-item"><%= link_to post.title, post, class: 'post_title' %><li>
-<% if current_user %>
-<p>Created by: <%= post.user.name %></p>
-<%=button_to "Delete Post", post, method: :delete, data: {confirm: "Are you sure you want to delete the post?"}, class: 'btn btn-danger mb-3' %>
-<% end %>
-<% end %>
-</ul>
-<%= link_to "Create a New article", new_post_path, class: 'btn btn-primary mt-2' %>
-</div>
-</div>
 </div>

@@ -1,13 +1,13 @@
 <div class = "container text-center">
-<div class="card">
-  <div class="card-header">
-<h1><%= @post.title %></h1>
-</div>
-  <div class="card-body">
-<p><%= @post.body %></p>
-<% if current_user %>
-<%= link_to "Edit Post", edit_post_path(@post), class: 'btn btn-success'%>
-<% end %>
-</div>
-</div>
+  <div class="card">
+    <div class="card-header">
+      <h1><%= @post.title %></h1>
+    </div>
+    <div class="card-body">
+    <p><%= @post.body %></p>
+      <% if current_user %>
+        <%= link_to "Edit Post", edit_post_path(@post), class: 'btn btn-success'%>
+      <% end %>
+    </div>
+  </div>
 </div>
