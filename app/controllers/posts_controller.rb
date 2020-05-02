@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create]
-    before_action :find_post, only: [:show, :edit, :update, :destroy]
-  
+    before_action :find_post, only: [:show, :edit, :update]
+    before_action :delete_authorization, only: [:destroy]
 
     def index
         @posts = Post.all
@@ -35,8 +35,8 @@ class PostsController < ApplicationController
     end
 
     def destroy
+        @post = current_user.posts.find(params[:id])
         @post.destroy
-        redirect_to posts_path
     end
 
     private
@@ -48,4 +48,9 @@ class PostsController < ApplicationController
     def find_post
         @post = Post.find(params[:id])
     end
+
+    def delete_authorization
+        redirect_to :root unless current_user.posts.find_by_id(params[:id])
+      end
+
 end
