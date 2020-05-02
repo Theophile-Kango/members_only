@@ -1,6 +1,9 @@
+<div class = "container jumbotron text-center ">
+<h1>All Posts</h1>
+<ul class= "list-group list-unstyled">
 <% @posts.each do |post| %>
-    <ul>
-        <li><%= post.title %></li>
-        <li><%= post.body %></li>
-    </ul>
+<li class= "list-group-item"><%= link_to post.title, post, class: 'post_title' %><li>
 <% end %>
+</ul>
+<%= link_to "Create a New article", new_post_path, class: 'btn btn-primary mt-2' %>
+</div>

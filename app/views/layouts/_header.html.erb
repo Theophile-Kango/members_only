@@ -1,0 +1,15 @@
+<header class="navbar bg-dark">
+<div class="container">
+<%= link_to "Blog App", root_path, id: "logo" %>
+<p class="navbar-text float-right">
+<% if user_signed_in? %>
+ <span class= "text-primary"> Logged in as</span> <strong class="text-primary"><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+</p>
+</div>
+</header>
