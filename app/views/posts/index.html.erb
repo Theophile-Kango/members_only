@@ -1,5 +1,9 @@
 <div class = "container jumbotron text-center ">
-<h1>All Posts</h1>
+<div class="card">
+  <div class="card-header">
+    <p class= "font-weight-bold text-muted">All Posts</p>
+  </div>
+  <div class="card-body">
 <ul class= "list-group list-unstyled">
 <% @posts.each do |post| %>
 <li class= "list-group-item"><%= link_to post.title, post, class: 'post_title' %><li>
@@ -10,4 +14,6 @@
 <% end %>
 </ul>
 <%= link_to "Create a New article", new_post_path, class: 'btn btn-primary mt-2' %>
+</div>
+</div>
 </div>
