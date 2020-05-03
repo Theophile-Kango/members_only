@@ -14,7 +14,8 @@ class PostsController < ApplicationController
     def create
         @post = current_user.posts.new(post_params)
         if @post.save
-            redirect_to root_path
+          flash.notice = "Post, '#{@post.title}' created!"
+          redirect_to root_path
         else
             render :new
         end
@@ -28,7 +29,8 @@ class PostsController < ApplicationController
 
     def update
     if @post.update(post_params)
-        redirect_to @post
+      flash.notice = "Post, '#{@post.title}' updated!"
+      redirect_to @post
     else
         render :edit
     end
@@ -37,6 +39,8 @@ class PostsController < ApplicationController
     def destroy
         @post = current_user.posts.find(params[:id])
         @post.destroy
+        flash.notice = "Post, '#{@post.title}' deleted!"
+        redirect_to root_path
     end
 
     private
@@ -50,7 +54,10 @@ class PostsController < ApplicationController
     end
 
     def delete_authorization
-        redirect_to :root unless current_user.posts.find_by_id(params[:id])
+         if !current_user.posts.find_by_id(params[:id])
+            flash.alert = "Post, cant be deleted!, authorize author only"
+            redirect_to :root
+         end
       end
 
 end
