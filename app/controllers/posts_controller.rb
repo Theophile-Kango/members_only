@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create]
-    before_action :find_post, only: [:show, :edit, :update]
-    before_action :delete_authorization, only: [:destroy]
+    before_action :find_post, only: [:show, :update, :edit]
+    before_action :user_authorization, only: [:destroy, :edit, :update]
 
     def index
         @posts = Post.all
@@ -53,9 +53,9 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
     end
 
-    def delete_authorization
+    def user_authorization
          if !current_user.posts.find_by_id(params[:id])
-            flash.alert = "Post, cant be deleted!, authorize author only"
+            flash.alert = "authorize author only"
             redirect_to :root
          end
       end
