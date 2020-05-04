@@ -1,6 +1,6 @@
 # Members only
 
-> The project is about building an exclusive clubhouse where members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post but non-members see the author of the post. 
+> The project is about building an exclusive clubhouse where members can write embarrassing posts about non-members. Inside the clubhouse, members can see the author of a post but non-members can't see. 
 
 ## Members-only
 
