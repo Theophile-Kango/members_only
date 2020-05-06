@@ -4,11 +4,11 @@
 
 ## Members-only
 
-![screencapture-localhost-3000-2020-05-04-14_35_22](https://user-images.githubusercontent.com/52670459/80971711-0eae9000-8e15-11ea-8dad-e30b36ab24a9.png)
+![login_user](https://user-images.githubusercontent.com/49276315/81159114-f069a100-8f88-11ea-9d3a-20d1521e65c3.png)
 
 ## Non-members
 
-![screencapture-localhost-3000-2020-05-04-14_45_12](https://user-images.githubusercontent.com/52670459/80972416-00ad3f00-8e16-11ea-96aa-99305564b943.png) 
+![clubhouse](https://user-images.githubusercontent.com/49276315/81159055-dfb92b00-8f88-11ea-9211-accaf047929b.png) 
 
 ## Built With
 
@@ -53,7 +53,7 @@
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Eshy10/sample_apps/issues)
+Feel free to check the [issues page](https://github.com/Theophile-Kango/members_only/issues)
 ## Show your support
 
 Give a ⭐️ if you like this project!
